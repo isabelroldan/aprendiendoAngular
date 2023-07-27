@@ -1,20 +1,33 @@
-<!--INTERPOLACIÓN-->
+<!--INTERPOLACIÓN:  Técnica de insertar valores dinámicos dentro de una cadena o plantilla de texto-->
 <!-- <p>{{ title }} en Montilla con Angular</p>
 <p>Total: {{ 5 + 5 }}</p>
 
 <img src="{{url}}" alt=""> -->
 
-<!--TWO-WAY DATA BINDING-->
+<!--TWO-WAY DATA BINDING (VINCULACIÓN DE DATOS BIDIRECCIONAL): Sincronización automática de datos entre el componente y la vista.
+Cuando los datos cambian en el componente, se actualiza instantáneamente la vista y viceversa. -->
 <!-- <p>El nombre es : {{name}}</p>
 <input type="text" [(ngModel)]="name"> -->
 
-<!-- DIRECTIVAS ESTRUCTURALES -->
-    <!-- ngFor -->
-<ul *ngFor="let city of cities">
-    <li>{{city}}</li>
-</ul>
+<!-- DIRECTIVAS: Son como atributos que pueden cambiar la apariencia o el comportamiento del DOM element -->
 
-    <!-- ngIf -->
-<p *ngIf="name">El nombre es : {{name}}</p>
-<input type="text" [(ngModel)]="name">
+<!-- DIRECTIVAS ESTRUCTURALES: Son directivas que alteran la estructura del DOM (Document Object Model) al agregar, 
+    eliminar o manipular elementos del mismo. Estas directivas se reconocen por el asterisco (*) que precede al nombre 
+    de la directiva en la plantilla HTML. Las directivas estructurales más comunes en Angular son ngIf, ngFor, y ngSwitch -->
+
+    <!-- ngFor: Itera sobre una lista y crea elementos en el DOM para cada elemento de la lista -->
+    <ul *ngFor="let city of cities">
+        <li>{{city}}</li>
+    </ul>
+
+    <!-- ngIf: Permite agregar o eliminar elementos del DOM en función de una expresión condicional -->
+    <p *ngIf="name">El nombre es : {{name}}</p>
+    <input type="text" [(ngModel)]="name">
                
+<!-- DIRECTIVAS DE ATRIBUTOS: Modifican la apariencia o el comportamiento de los elementos del DOM sin afectar su estructura.
+    Estas directivas se aplican utilizando el nombre de la directiva como un atributo en los elementos HTML. Las directivas 
+    de atributos más comunes en Angular son ngClass, ngStyle, y ngModel -->
+    <!-- ngClass: Permite agregar o quitar clases CSS en función de una expresión -->
+
+
+    <!-- ngStyle: Permite aplicar estilos en línea al elemento en función de una expresión -->
