@@ -24,4 +24,15 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy {
   ngOnDestroy(): void {
       console.log('Destroy');
   }
+
+  selection!: string;
+
+  onCityClicked(city: string): void {
+    console.log('City -> ', city);
+    this.selection = city;
+  }
+
+  onClear(): void {
+    this.selection = ''; 
+  }
 }

@@ -43,10 +43,10 @@ Cuando los datos cambian en el componente, se actualiza instantáneamente la vis
         </ul> -->
 
     <!-- ngStyle: Permite aplicar estilos en línea al elemento en función de una expresión -->
-    <ul *ngFor="let city of cities">
+    <!-- <ul *ngFor="let city of cities"> -->
         <!-- Si es Madrid el color de fondo será azul pero si no, será verde -->
-        <li [ngStyle]="{'color': 'white', 'background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li> 
-    </ul>
+        <!-- <li [ngStyle]="{'color': 'white', 'background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li> 
+    </ul> -->
 
     <!-- Ciclo de vida de los componentes: Comienza con la instancia de ese componente o de una directiva. 
         Representa la vista del componente junto con sus vistas secundarias  
@@ -60,4 +60,24 @@ Cuando los datos cambian en el componente, se actualiza instantáneamente la vis
      AfterViewInit                   ngAfterViewInit              After component’s view(s) are initialized
      AfterViewChecked              ngAfterViewChecked             After every check of a component’s view(s)
      OnDestroy                        ngOnDestroy                 Just before the directive is destroyed
--->
+    -->
+
+
+<!-- EVENT BINDING O ENLACE DE EVENTOS: Nos permite escuchar y responder a las acciones de usuario, como por ejemplo: 
+    pulsaciones de teclas, movimineto del mouse, clics -->
+    <!-- Target event name o evento el click que hace el usuario y lo el template statement 
+        o lo que respondemos sería un método -->
+    <!-- <button (click)="onSave()">Save</button> -->
+
+    <ul *ngFor="let city of cities">
+        <!-- Que hace la linea de abajo: Cuando clickes sobre una ciudad se llamará al método onCityClicked pasandole 
+            dicha ciudad. Si la ciudad es === que la seleción aplicará los estilos de selected. -->
+        <li (click)="onCityClicked(city)" [ngClass]="{'selected': city === selection}">{{city}}</li>
+    </ul>
+
+    <div *ngIf="selection">
+        <p >Your city is: {{selection}}</p>
+        <button (click)="onClear()">Clear your selection</button>
+    </div>
+
+    
