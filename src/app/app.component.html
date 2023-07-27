@@ -47,3 +47,17 @@ Cuando los datos cambian en el componente, se actualiza instantáneamente la vis
         <!-- Si es Madrid el color de fondo será azul pero si no, será verde -->
         <li [ngStyle]="{'color': 'white', 'background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li> 
     </ul>
+
+    <!-- Ciclo de vida de los componentes: Comienza con la instancia de ese componente o de una directiva. 
+        Representa la vista del componente junto con sus vistas secundarias  
+     Interface                          Method                    Description
+
+     OnChanges                        ngOnChanges                 Called when an input or output binding value changes
+     OnInit                            ngOnInit                   After the first ngOnChanges
+     DoCheck                           ngDoCheck                  Developer’s custom change detection
+     AfterContentInit              ngAfterContentInit             After component content initialized
+     AfterContentChecked          ngAfterContentChecked           After every check of component content
+     AfterViewInit                   ngAfterViewInit              After component’s view(s) are initialized
+     AfterViewChecked              ngAfterViewChecked             After every check of a component’s view(s)
+     OnDestroy                        ngOnDestroy                 Just before the directive is destroyed
+-->
