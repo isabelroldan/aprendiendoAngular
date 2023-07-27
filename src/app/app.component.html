@@ -16,18 +16,34 @@ Cuando los datos cambian en el componente, se actualiza instantáneamente la vis
     de la directiva en la plantilla HTML. Las directivas estructurales más comunes en Angular son ngIf, ngFor, y ngSwitch -->
 
     <!-- ngFor: Itera sobre una lista y crea elementos en el DOM para cada elemento de la lista -->
-    <ul *ngFor="let city of cities">
+    <!-- <ul *ngFor="let city of cities">
         <li>{{city}}</li>
-    </ul>
+    </ul> -->
 
     <!-- ngIf: Permite agregar o eliminar elementos del DOM en función de una expresión condicional -->
-    <p *ngIf="name">El nombre es : {{name}}</p>
-    <input type="text" [(ngModel)]="name">
+   <!--  <p *ngIf="name">El nombre es : {{name}}</p>
+    <input type="text" [(ngModel)]="name"> -->
                
 <!-- DIRECTIVAS DE ATRIBUTOS: Modifican la apariencia o el comportamiento de los elementos del DOM sin afectar su estructura.
     Estas directivas se aplican utilizando el nombre de la directiva como un atributo en los elementos HTML. Las directivas 
     de atributos más comunes en Angular son ngClass, ngStyle, y ngModel -->
     <!-- ngClass: Permite agregar o quitar clases CSS en función de una expresión -->
+    <!-- <ul *ngFor="let city of cities">
+        <li [ngClass]="'selected blue'">{{city}}</li>
+    </ul> -->
 
+        <!-- Array -->
+       <!--  <ul *ngFor="let city of cities">
+            <li [ngClass]="['selected', 'blue']">{{city}}</li>
+        </ul> -->
+
+        <!-- Objeto -->
+        <!-- <ul *ngFor="let city of cities">
+            <li [ngClass]="{'selected': city === 'Córdoba', 'blue': city !== 'Barcelona'}">{{city}}</li>
+        </ul> -->
 
     <!-- ngStyle: Permite aplicar estilos en línea al elemento en función de una expresión -->
+    <ul *ngFor="let city of cities">
+        <!-- Si es Madrid el color de fondo será azul pero si no, será verde -->
+        <li [ngStyle]="{'color': 'white', 'background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li> 
+    </ul>
